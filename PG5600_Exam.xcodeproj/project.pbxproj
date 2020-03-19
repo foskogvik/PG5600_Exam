@@ -127,6 +127,7 @@
 		68F6CEEC23FFCAB800BA5E35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				68F6CEFD23FFFBFA00BA5E35 /* ImageCell.swift */,
 				68F6CECD23FFCA3600BA5E35 /* Main.storyboard */,
 			);
 			path = View;
@@ -137,7 +138,6 @@
 			children = (
 				68F6CECB23FFCA3600BA5E35 /* MainViewController.swift */,
 				68F6CEF323FFD04F00BA5E35 /* ImageSelectCollectionViewController.swift */,
-				68F6CEFD23FFFBFA00BA5E35 /* ImageCell.swift */,
 				68F6CF0124031BE900BA5E35 /* ImageSelectModalController.swift */,
 				68F6CF03240322AD00BA5E35 /* NeuralNetworkViewController.swift */,
 				68F6CF05240347DA00BA5E35 /* AnalysisViewController.swift */,

@@ -26,8 +26,10 @@ class ImageCell: UICollectionViewCell {
         }
     }
     
-    func addToSelectionArray() {
-    
+    var thumbnailImage: UIImage! {
+        didSet {
+            imageView.image = thumbnailImage
+        }
     }
 }
 

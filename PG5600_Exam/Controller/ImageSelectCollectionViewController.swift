@@ -13,7 +13,7 @@ private let reuseIdentifier = "ImageCell"
 
 class ImageSelectCollectionViewController: UICollectionViewController {
     @IBOutlet var submitButton: UIBarButtonItem!
-
+    
     let imageManager = ImageManager()
 
     override func viewDidLoad() {

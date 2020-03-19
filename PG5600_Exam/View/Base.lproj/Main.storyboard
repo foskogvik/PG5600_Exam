@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -65,8 +64,89 @@
                             <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ImageCell" id="mcm-FP-VUb" customClass="ImageCell" customModule="PG5600_Exam" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ImageCell" id="gxq-X8-bKR" customClass="ImageCell" customModule="PG5600_Exam" customModuleProvider="target">
                                 <rect key="frame" x="20" y="10" width="170" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBr-io-7Ta">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="117"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="170" id="CIT-yw-td7"/>
+                                                <constraint firstAttribute="height" constant="120" id="Rek-Zf-0WX"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="XLV-Oa-pLT"/>
+                                            </constraints>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HECK!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-0Y-DxD" userLabel="imageLabel">
+                                            <rect key="frame" x="20" y="125" width="140" height="21"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Th-CZ-cJK">
+                                            <rect key="frame" x="25" y="22" width="120" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CBr-io-7Ta" secondAttribute="trailing" id="1p1-G9-cuc"/>
+                                    <constraint firstItem="mRd-0Y-DxD" firstAttribute="leading" secondItem="gxq-X8-bKR" secondAttribute="leading" symbolic="YES" id="3qE-Dh-6eR"/>
+                                    <constraint firstAttribute="trailing" secondItem="mRd-0Y-DxD" secondAttribute="trailing" symbolic="YES" id="d2W-YX-uk3"/>
+                                    <constraint firstItem="CBr-io-7Ta" firstAttribute="top" secondItem="gxq-X8-bKR" secondAttribute="top" symbolic="YES" id="pKc-5N-ffR"/>
+                                    <constraint firstItem="mRd-0Y-DxD" firstAttribute="top" secondItem="CBr-io-7Ta" secondAttribute="bottom" constant="8" id="waz-dq-sDJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="mRd-0Y-DxD" secondAttribute="bottom" constant="4" id="xfc-Q1-6us"/>
+                                    <constraint firstItem="CBr-io-7Ta" firstAttribute="leading" secondItem="gxq-X8-bKR" secondAttribute="leading" id="ySP-mU-sHX"/>
+                                </constraints>
+                                <size key="customSize" width="170" height="150"/>
+                                <connections>
+                                    <outlet property="checkMarkView" destination="1Th-CZ-cJK" id="uUW-yA-TCr"/>
+                                    <outlet property="imageLabel" destination="mRd-0Y-DxD" id="Y2a-BF-jga"/>
+                                    <outlet property="imageView" destination="CBr-io-7Ta" id="bcf-29-nXI"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="MsN-on-Rgw" id="Ao6-iW-3j8"/>
+                            <outlet property="delegate" destination="MsN-on-Rgw" id="Y7W-XH-zKI"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="UV4-96-L4P">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="LMd-tH-E6p">
+                            <connections>
+                                <segue destination="8s3-RC-bUy" kind="presentation" identifier="presentModal" modalPresentationStyle="pageSheet" modalTransitionStyle="crossDissolve" id="LwF-Pm-Cbp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="submitButton" destination="LMd-tH-E6p" id="VHy-kD-8T3"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KsU-YJ-35B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8115942028987" y="-177.45535714285714"/>
+        </scene>
+        <!--Gallery Collection View Controller-->
+        <scene sceneID="ddh-l2-ZFA">
+            <objects>
+                <collectionViewController id="vMe-BB-tgw" customClass="GalleryCollectionViewController" customModule="PG5600_Exam" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iXa-vl-kM2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aZL-UN-dfw">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ImageCell" id="mcm-FP-VUb" customClass="ImageCell" customModule="PG5600_Exam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="150"/>
@@ -109,50 +189,6 @@
                                     <outlet property="imageLabel" destination="OVk-e4-HKY" id="NX9-oK-Uo6"/>
                                     <outlet property="imageView" destination="s6j-Gn-EP7" id="Hzk-ba-Khw"/>
                                 </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="MsN-on-Rgw" id="Ao6-iW-3j8"/>
-                            <outlet property="delegate" destination="MsN-on-Rgw" id="Y7W-XH-zKI"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="UV4-96-L4P">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="LMd-tH-E6p">
-                            <connections>
-                                <segue destination="8s3-RC-bUy" kind="presentation" identifier="presentModal" modalPresentationStyle="pageSheet" modalTransitionStyle="crossDissolve" id="LwF-Pm-Cbp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="submitButton" destination="LMd-tH-E6p" id="VHy-kD-8T3"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KsU-YJ-35B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1776.8115942028987" y="-177.45535714285714"/>
-        </scene>
-        <!--Gallery Collection View Controller-->
-        <scene sceneID="ddh-l2-ZFA">
-            <objects>
-                <collectionViewController id="vMe-BB-tgw" customClass="GalleryCollectionViewController" customModule="PG5600_Exam" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iXa-vl-kM2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aZL-UN-dfw">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cL4-Dv-Sja">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VD1-Uo-hfi">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -512,6 +548,6 @@ Which network do you want to run on these images?</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CF7-W7-8XK"/>
-        <segue reference="l08-S3-kdS"/>
+        <segue reference="Ln2-6s-m9F"/>
     </inferredMetricsTieBreakers>
 </document>

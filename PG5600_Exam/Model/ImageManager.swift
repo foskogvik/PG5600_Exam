@@ -23,10 +23,6 @@ class ImageManager {
     // function for getting images from gallery
     func loadImage() {
         
-
-        
-        
-        
         // define imagemanager
         let imgManager = PHImageManager.default()
 

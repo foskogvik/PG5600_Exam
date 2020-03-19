@@ -1,18 +1,23 @@
 #  Exam PG5600
 
-The code has a bug at the image selection screen. Where selection has to happen in sequence.
-This is because i used an array to pass data back and forth between views.
+Overarching Todos:
 
-The array that holds the selected images for segue is instanciated as empty and because select and deselect methods of the collectionview relies on correct indexes i was not able to remove the correct image from the array out of sequence.
+1. Implement proper photolibrary access.
 
-to get around this, a user must select images starting from the top left.
+2. Create proper UI design for application.
 
-there are no models so the "analysis" is hardcoded. and are only based on the animal recognizer.
+3. Restructure to use MVC and save persisitent data.
 
-when returning to the network selection screen the analysed label in the animal recognizer view is the only one that is updated.
+4. Clean up spaghetti mess.
 
-im adding the images used to test with to the project just drag them onto the simulator if they are not there.
+5. Comment too much to begin with. Sort out what is valuable later.
 
-tested the ui on iphone 11 and 8 and it worked fine.
+Bugs/Errors: 
+
+1. selecting images in wrong order causes crash.
+
+2. Navigation logic is all messed up.
+
+3. pretty much everything is hardcoded.
 
 
