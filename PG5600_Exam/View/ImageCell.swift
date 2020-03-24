@@ -16,15 +16,15 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var checkMarkView: UIImageView!
     
-    override var isSelected: Bool {
-        didSet {
-            if self.isSelected {
-                checkMarkView.isHidden = false
-            } else {
-                checkMarkView.isHidden = true
-            }
-        }
-    }
+//    override var isSelected: Bool {
+//        didSet {
+//            if self.isSelected {
+//                checkMarkView.isHidden = false
+//            } else {
+//                checkMarkView.isHidden = true
+//            }
+//        }
+//    }
     
     var thumbnailImage: UIImage! {
         didSet {

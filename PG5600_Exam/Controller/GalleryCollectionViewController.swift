@@ -12,19 +12,54 @@ import UIKit
 
 private let reuseIdentifier = "ImageCell"
 
+private extension UICollectionView {
+    func indexPathsForElements(in rect: CGRect) -> [IndexPath] {
+        let allLayoutAttributes = collectionViewLayout.layoutAttributesForElements(in: rect)!
+        return allLayoutAttributes.map { $0.indexPath }
+    }
+}
+
 class GalleryCollectionViewController: UICollectionViewController {
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHCachingImageManager()
+    var assetCollection: PHAssetCollection!
+    
+    var availableWidth: CGFloat = 0
 
+    fileprivate var thumbnailSize: CGSize!
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // defines an object for holding fetch options.
         let allPhotosOptions = PHFetchOptions()
+        // sets sorting order of fetched images, sorted ascending by creation date.
         allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        // retrieves all assets that matches our options and assigns them to the fetchResult collection.
         fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
-        print(fetchResult!)
-        print(imageManager)
-        // Do any additional setup after loading the view.
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let width = view.bounds.inset(by: view.safeAreaInsets).width
+        // Adjust the item size if the available width has changed.
+        if availableWidth != width {
+            availableWidth = width
+            // increasing the "divided by" number decreases the number of cells in the column
+            let columnCount = (availableWidth / 200).rounded(.towardZero)
+            let itemLength = (availableWidth - columnCount - 1) / columnCount
+            flowLayout.itemSize = CGSize(width: itemLength, height: itemLength)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Determine the size of the thumbnails to request from the PHCachingImageManager.
+        let scale = UIScreen.main.scale
+        let cellSize = flowLayout.itemSize
+        thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
     }
 
     /*
@@ -51,7 +86,7 @@ class GalleryCollectionViewController: UICollectionViewController {
             else { fatalError("Unexpected cell in collection view") }
         
         // Request an image for the asset from the PHCachingImageManager.
-        imageManager.requestImage(for: asset, targetSize: CGSize(width: 170, height: 120), contentMode: .aspectFit
+        imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFit
         , options: nil) { image, _ in
             cell.thumbnailImage = image
         }
