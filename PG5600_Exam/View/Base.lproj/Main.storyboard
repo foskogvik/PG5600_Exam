@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vMe-BB-tgw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IKf-q1-KPc">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image Processor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-gR-TXW">
-                                <rect key="frame" x="64" y="243" width="287" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wq-oJ-Ad3">
                                 <rect key="frame" x="183" y="497" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,6 +32,13 @@
                                     <segue destination="MsN-on-Rgw" kind="show" id="AjW-Uq-nUP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's THAT thing?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-gR-TXW">
+                                <rect key="frame" x="35" y="254" width="344" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634.78260869565224" y="164.73214285714286"/>
+            <point key="canvasLocation" x="634.78260869565224" y="164.67391304347828"/>
         </scene>
         <!--Image Select Collection View Controller-->
         <scene sceneID="dNw-fU-ZEE">
@@ -57,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QqX-Fk-kUx">
-                            <size key="itemSize" width="150" height="150"/>
+                            <size key="itemSize" width="170" height="150"/>
                             <size key="estimatedItemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -128,7 +129,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KsU-YJ-35B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8115942028987" y="-177.45535714285714"/>
+            <point key="canvasLocation" x="1776.8115942028987" y="-177.71739130434784"/>
         </scene>
         <!--Gallery Collection View Controller-->
         <scene sceneID="ddh-l2-ZFA">
@@ -138,13 +139,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="aZL-UN-dfw">
-                            <size key="itemSize" width="200" height="185"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="aZL-UN-dfw">
+                            <size key="itemSize" width="180" height="180"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="1" minY="1" maxX="1" maxY="1"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ImageCell" id="mcm-FP-VUb" customClass="ImageCell" customModule="PG5600_Exam" customModuleProvider="target">
+                                <rect key="frame" x="5" y="5" width="200" height="210"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cMc-XR-v4r">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="210"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FBZ-He-sST">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="190"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Timestamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR9-q4-URM">
+                                            <rect key="frame" x="0.0" y="190" width="200" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-M2-YOo">
+                                            <rect key="frame" x="50" y="47.333333333333329" width="100" height="96"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="eR9-q4-URM" secondAttribute="trailing" id="2Zn-ps-BCn"/>
+                                        <constraint firstAttribute="trailing" secondItem="ghM-M2-YOo" secondAttribute="trailing" constant="50" id="4ab-eJ-hwG"/>
+                                        <constraint firstItem="eR9-q4-URM" firstAttribute="top" secondItem="ghM-M2-YOo" secondAttribute="bottom" constant="45" id="5kC-2J-j93"/>
+                                        <constraint firstItem="eR9-q4-URM" firstAttribute="leading" secondItem="cMc-XR-v4r" secondAttribute="leading" id="D2S-5G-Cjp"/>
+                                        <constraint firstItem="FBZ-He-sST" firstAttribute="top" secondItem="cMc-XR-v4r" secondAttribute="top" id="FNP-cy-B80"/>
+                                        <constraint firstAttribute="bottom" secondItem="eR9-q4-URM" secondAttribute="bottom" id="H9t-xn-5oy"/>
+                                        <constraint firstItem="ghM-M2-YOo" firstAttribute="top" secondItem="cMc-XR-v4r" secondAttribute="top" constant="45" id="SgM-Yu-lHU"/>
+                                        <constraint firstItem="ghM-M2-YOo" firstAttribute="leading" secondItem="cMc-XR-v4r" secondAttribute="leading" constant="50" id="XAE-K8-dtT"/>
+                                        <constraint firstAttribute="trailing" secondItem="FBZ-He-sST" secondAttribute="trailing" id="YtW-MJ-ruG"/>
+                                        <constraint firstItem="eR9-q4-URM" firstAttribute="top" secondItem="FBZ-He-sST" secondAttribute="bottom" id="e28-jQ-vYg"/>
+                                        <constraint firstItem="FBZ-He-sST" firstAttribute="leading" secondItem="cMc-XR-v4r" secondAttribute="leading" id="yZ0-il-c7I"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="200" height="210"/>
+                                <connections>
+                                    <outlet property="cellImageView" destination="FBZ-He-sST" id="ifr-aM-wY2"/>
+                                    <outlet property="checkImageView" destination="ghM-M2-YOo" id="fNy-WU-QyT"/>
+                                    <outlet property="timeStampLabel" destination="eR9-q4-URM" id="h7v-gS-mOo"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
                             <outlet property="dataSource" destination="vMe-BB-tgw" id="yTd-hK-Hdc"/>
                             <outlet property="delegate" destination="vMe-BB-tgw" id="Hhf-sj-zr0"/>
@@ -152,7 +196,8 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="rPd-Qi-pmT"/>
                     <connections>
-                        <outlet property="flowLayout" destination="aZL-UN-dfw" id="c8x-5L-qhE"/>
+                        <outlet property="collectionView" destination="iXa-vl-kM2" id="8Kf-ZY-vCr"/>
+                        <outlet property="flowLayout" destination="aZL-UN-dfw" id="0oq-he-IxD"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pn-HX-IPH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,7 +265,7 @@ Which network do you want to run on these images?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBU-KW-azW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.6231884057975" y="-178.53260869565219"/>
+            <point key="canvasLocation" x="3291" y="-181"/>
         </scene>
         <!--Neural Network View Controller-->
         <scene sceneID="WI2-0Y-QFc">
@@ -381,7 +426,7 @@ Which network do you want to run on these images?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85h-c6-Z9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3344.9275362318845" y="-175.27173913043481"/>
+            <point key="canvasLocation" x="4083" y="-178"/>
         </scene>
         <!--Analysis View Controller-->
         <scene sceneID="vb3-e3-xyD">
@@ -479,7 +524,7 @@ Which network do you want to run on these images?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tf5-pR-LEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4428.985507246377" y="-175.27173913043481"/>
+            <point key="canvasLocation" x="5167" y="-178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ULz-H1-yVr">
@@ -500,11 +545,11 @@ Which network do you want to run on these images?</string>
             <point key="canvasLocation" x="-275.36231884057975" y="164.73214285714286"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CF7-W7-8XK"/>
         <segue reference="Ln2-6s-m9F"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

@@ -20,4 +20,6 @@ Bugs/Errors:
 
 3. pretty much everything is hardcoded.
 
+Notes:
 
+content compression priority can prevent a UI element from being forced out of view. In this case i used it on the label in cell to make the timestamp prioritzed.

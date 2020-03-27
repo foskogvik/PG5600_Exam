@@ -14,7 +14,7 @@ private let reuseIdentifier = "ImageCell"
 class ImageSelectCollectionViewController: UICollectionViewController {
     @IBOutlet var submitButton: UIBarButtonItem!
     
-    let imageManager = ImageManager()
+    //let imageManager = ImageManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ImageSelectCollectionViewController: UICollectionViewController {
         collectionView.allowsMultipleSelection = true
 
         // call loadimage function to get all photos in the gallery.
-        imageManager.loadImage()
+        //imageManager.loadImage()
 
         clearsSelectionOnViewWillAppear = true
         
@@ -38,7 +38,7 @@ class ImageSelectCollectionViewController: UICollectionViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "presentModal" {
             let destinationVC = segue.destination as! ImageSelectModalController
-            destinationVC.selectedImages = imageManager.selectedImageArray
+            //destinationVC.selectedImages = imageManager.selectedImageArray
      }
     }
      
@@ -46,8 +46,9 @@ class ImageSelectCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
         // #warning Incomplete implementation, return the number of items
-        return imageManager.imageArray.count
+        //return imageManager.imageArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,12 +58,12 @@ class ImageSelectCollectionViewController: UICollectionViewController {
         // Gets a reference to the cell in the storyboard
         let imageView = cell.viewWithTag(1) as! UIImageView
         // Gets a reference to the titleLabel in the storyboard
-        let label = cell.imageLabel!
+        //let label = cell.imageLabel!
 
         // sets the image in the view to the first one from the imagearray
-        imageView.image = imageManager.imageArray[indexPath.row]
+        //imageView.image = imageManager.imageArray[indexPath.row]
         // sets the text in the label to the date taken from the datearray and converts it to a sting
-        label.text = imageManager.dateArray[indexPath.row].toString(dateFormat: "yyyy/MMM/dd")
+//        label.text = imageManager.dateArray[indexPath.row].toString(dateFormat: "yyyy/MMM/dd")
 
         print(indexPath.row)
 
@@ -74,18 +75,18 @@ class ImageSelectCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCell
-        let image = imageManager.imageArray[indexPath.row]
-
-        if imageManager.selectedImageArray.contains(image) == false {
-            cell.isSelected = true
-            imageManager.selectedImageArray.insert(image, at: indexPath.row)
-        }
-        
-        if imageManager.selectedImageArray.isEmpty {
-            submitButton.isEnabled = false
-        } else {
-            submitButton.isEnabled = true
-        }
+//        let image = imageManager.imageArray[indexPath.row]
+//
+//        if imageManager.selectedImageArray.contains(image) == false {
+//            cell.isSelected = true
+//            imageManager.selectedImageArray.insert(image, at: indexPath.row)
+//        }
+//
+//        if imageManager.selectedImageArray.isEmpty {
+//            submitButton.isEnabled = false
+//        } else {
+//            submitButton.isEnabled = true
+//        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -94,14 +95,14 @@ class ImageSelectCollectionViewController: UICollectionViewController {
 //        for image in imageManager.selectedImageArray {
         index = indexPath.row
 //        }
-        imageManager.selectedImageArray.remove(at: index)
-        cell.isSelected = false
-        
-        if imageManager.selectedImageArray.isEmpty {
-            submitButton.isEnabled = false
-        } else {
-            submitButton.isEnabled = true
-        }
+//        imageManager.selectedImageArray.remove(at: index)
+//        cell.isSelected = false
+//
+//        if imageManager.selectedImageArray.isEmpty {
+//            submitButton.isEnabled = false
+//        } else {
+//            submitButton.isEnabled = true
+//        }
         
     }
 }

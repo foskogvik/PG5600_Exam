@@ -9,36 +9,33 @@
 import UIKit
 
 class ImageCell: UICollectionViewCell {
-    
-    var isSeleted: Bool = false
-    
-    @IBOutlet var imageLabel: UILabel!
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet weak var checkMarkView: UIImageView!
-    
-//    override var isSelected: Bool {
-//        didSet {
-//            if self.isSelected {
-//                checkMarkView.isHidden = false
-//            } else {
-//                checkMarkView.isHidden = true
-//            }
-//        }
-//    }
-    
+    @IBOutlet var cellImageView: UIImageView!
+    @IBOutlet var timeStampLabel: UILabel!
+    @IBOutlet var checkImageView: UIImageView!
+
     var thumbnailImage: UIImage! {
         didSet {
-            imageView.image = thumbnailImage
+            cellImageView.image = thumbnailImage
+        }
+    }
+
+    override var isSelected: Bool {
+        didSet {
+            cellImageView.alpha = isSelected ? 0.5 : 1
+            checkImageView.isHidden = isSelected ? false : true
         }
     }
 }
 
-extension Date
-{
-    func toString( dateFormat format  : String ) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        return dateFormatter.string(from: self)
-    }
-}
+
+
+// Date functionality currently resides in GalleryCollectionViewController. Will attempt to decouple and adhere to MVC as much as possible later.
+// extension Date
+// {
+//    func toString( dateFormat format  : String ) -> String
+//    {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = format
+//        return dateFormatter.string(from: self)
+//    }
+// }

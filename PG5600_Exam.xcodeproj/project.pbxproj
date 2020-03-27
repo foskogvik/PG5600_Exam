@@ -18,9 +18,7 @@
 		68F6CED723FFCA3700BA5E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F6CED523FFCA3700BA5E35 /* LaunchScreen.storyboard */; };
 		68F6CEE223FFCA3700BA5E35 /* PG5600_ExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CEE123FFCA3700BA5E35 /* PG5600_ExamTests.swift */; };
 		68F6CEF423FFD04F00BA5E35 /* ImageSelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CEF323FFD04F00BA5E35 /* ImageSelectCollectionViewController.swift */; };
-		68F6CEFC23FFEDCD00BA5E35 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CEFB23FFEDCD00BA5E35 /* ImageModel.swift */; };
 		68F6CEFE23FFFBFA00BA5E35 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CEFD23FFFBFA00BA5E35 /* ImageCell.swift */; };
-		68F6CF002401FEF300BA5E35 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CEFF2401FEF300BA5E35 /* ImageManager.swift */; };
 		68F6CF0224031BE900BA5E35 /* ImageSelectModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CF0124031BE900BA5E35 /* ImageSelectModalController.swift */; };
 		68F6CF04240322AD00BA5E35 /* NeuralNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CF03240322AD00BA5E35 /* NeuralNetworkViewController.swift */; };
 		68F6CF06240347DA00BA5E35 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6CF05240347DA00BA5E35 /* AnalysisViewController.swift */; };
@@ -53,9 +51,7 @@
 		68F6CEE123FFCA3700BA5E35 /* PG5600_ExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PG5600_ExamTests.swift; sourceTree = "<group>"; };
 		68F6CEE323FFCA3700BA5E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68F6CEF323FFD04F00BA5E35 /* ImageSelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectCollectionViewController.swift; sourceTree = "<group>"; };
-		68F6CEFB23FFEDCD00BA5E35 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		68F6CEFD23FFFBFA00BA5E35 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		68F6CEFF2401FEF300BA5E35 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		68F6CF0124031BE900BA5E35 /* ImageSelectModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectModalController.swift; sourceTree = "<group>"; };
 		68F6CF03240322AD00BA5E35 /* NeuralNetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkViewController.swift; sourceTree = "<group>"; };
 		68F6CF05240347DA00BA5E35 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
@@ -149,8 +145,6 @@
 		68F6CEEE23FFCACB00BA5E35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				68F6CEFB23FFEDCD00BA5E35 /* ImageModel.swift */,
-				68F6CEFF2401FEF300BA5E35 /* ImageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,7 +254,6 @@
 				68F6CED223FFCA3600BA5E35 /* PG5600_Exam.xcdatamodeld in Sources */,
 				68F6CF06240347DA00BA5E35 /* AnalysisViewController.swift in Sources */,
 				68F6CECC23FFCA3600BA5E35 /* MainViewController.swift in Sources */,
-				68F6CF002401FEF300BA5E35 /* ImageManager.swift in Sources */,
 				68F6CEF423FFD04F00BA5E35 /* ImageSelectCollectionViewController.swift in Sources */,
 				68F6CEC823FFCA3600BA5E35 /* AppDelegate.swift in Sources */,
 				68F6CF0224031BE900BA5E35 /* ImageSelectModalController.swift in Sources */,
@@ -268,7 +261,6 @@
 				68F6CF04240322AD00BA5E35 /* NeuralNetworkViewController.swift in Sources */,
 				68F6CEFE23FFFBFA00BA5E35 /* ImageCell.swift in Sources */,
 				68F6CECA23FFCA3600BA5E35 /* SceneDelegate.swift in Sources */,
-				68F6CEFC23FFEDCD00BA5E35 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
